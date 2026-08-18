@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silvio César Stecca — Especialista ADVPL &middot; Protheus Expert</title>
+<meta name="description" content="Silvio César Stecca — Especialista ADVPL/TLPP, Protheus Expert. +12 anos em ERP TOTVS, 30 anos de trajetória em TI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16191f;
+    --muted:#5b6270;
+    --paper:#f6f3ec;
+    --card:#ffffff;
+    --border:#e4dfd2;
+
+    --hero-bg:#0c1016;
+    --hero-card:#171c24;
+    --hero-border:#2a3140;
+    --muted-lt:#9aa2b1;
+
+    --teal:#0f8f82;
+    --teal-lt:#3fd6c3;
+    --orange:#e07b1a;
+
+    --font-sans:'Inter', -apple-system, sans-serif;
+    --font-mono:'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-sans);
+    font-size:16px;
+    line-height:1.6;
+  }
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+
+  a{color:var(--teal); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px;}
+
+  code, .mono{font-family:var(--font-mono);}
+
+  /* HERO */
+  .hero{background:var(--hero-bg); color:#fff; padding:64px 0 44px;}
+  .hero-top{display:flex; justify-content:space-between; align-items:flex-start; gap:28px; flex-wrap:wrap;}
+  .hero-name{font-size:46px; font-weight:800; line-height:1.08; letter-spacing:-0.5px;}
+  .hero-name .accent{color:var(--teal-lt);}
+  .hero-role{
+    font-family:var(--font-mono);
+    color:var(--orange);
+    font-size:14.5px;
+    font-weight:500;
+    margin-top:14px;
+    letter-spacing:0.2px;
+  }
+  .hero-desc{color:#d7dbe3; font-size:15px; margin-top:16px; max-width:62ch;}
+  .hero-desc b{color:#fff; font-weight:600;}
+
+  .avatar{
+    width:96px; height:96px; border-radius:50%;
+    border:2px solid var(--teal-lt);
+    background:var(--hero-card);
+    flex:none;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-mono); font-weight:700; font-size:26px;
+    color:var(--teal-lt);
+  }
+
+  .pill-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;}
+  .pill{
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:#e6e9ef;
+    border:1px solid var(--hero-border);
+    border-radius:6px;
+    padding:7px 12px;
+    display:inline-flex; align-items:center; gap:7px;
+  }
+  .pill span.k{color:var(--teal-lt);}
+
+  .stat-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--hero-border); margin-top:26px; border:1px solid var(--hero-border); border-radius:8px; overflow:hidden;}
+  .stat{background:var(--hero-card); padding:16px 14px;}
+  .stat .n{font-family:var(--font-mono); font-weight:700; font-size:24px;}
+  .stat .l{font-family:var(--font-mono); color:var(--muted-lt); font-size:10.5px; text-transform:uppercase; letter-spacing:0.4px; margin-top:4px;}
+
+  /* SECTIONS */
+  main{padding:56px 0 40px;}
+  section{margin-bottom:52px;}
+  section:last-child{margin-bottom:0;}
+
+  .sec-head{display:flex; align-items:center; gap:14px; margin-bottom:22px;}
+  .sec-num{
+    font-family:var(--font-mono); font-size:12px; font-weight:600;
+    color:var(--teal); background:rgba(15,143,130,0.1);
+    border-radius:5px; padding:3px 7px;
+  }
+  .sec-title{font-size:22px; font-weight:700; letter-spacing:-0.2px;}
+  .sec-rule{flex:1; height:1px; background:var(--border);}
+
+  #perfil p{color:#33363c; max-width:70ch; margin-bottom:14px; font-size:15.5px;}
+  #perfil p:last-child{margin-bottom:0;}
+  #perfil .hl{
+    font-family:var(--font-mono); font-size:14.5px;
+    background:rgba(15,143,130,0.12);
+    border-bottom:2px solid var(--teal);
+    padding:0 2px;
+  }
+
+  /* TIMELINE */
+  .timeline{position:relative; padding-left:26px;}
+  .timeline::before{content:""; position:absolute; left:5px; top:6px; bottom:6px; width:1px; background:var(--border);}
+  .tl-item{position:relative; margin-bottom:30px;}
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-item::before{
+    content:""; position:absolute; left:-26px; top:5px;
+    width:11px; height:11px; border-radius:50%;
+    background:var(--teal); border:2px solid var(--paper);
+    box-shadow:0 0 0 1.5px var(--teal);
+  }
+  .tl-item.condensed::before{background:var(--paper); box-shadow:0 0 0 1.5px var(--border);}
+  .tl-row{display:flex; justify-content:space-between; align-items:baseline; gap:14px; flex-wrap:wrap;}
+  .tl-role{font-size:16.5px; font-weight:700;}
+  .tl-role .co{color:var(--teal); font-weight:600;}
+  .tl-meta{font-family:var(--font-mono); font-size:12px; color:var(--muted); white-space:nowrap;}
+  .tl-desc{color:var(--muted); font-size:14px; margin-top:4px; max-width:66ch;}
+  .tl-bullets{margin-top:10px; padding-left:0; list-style:none; max-width:66ch;}
+  .tl-bullets li{font-size:14px; color:#33363c; margin-bottom:7px; padding-left:16px; position:relative;}
+  .tl-bullets li::before{content:"—"; position:absolute; left:0; color:var(--orange);}
+  .tl-bullets b{font-weight:600;}
+  .tl-item.condensed .tl-role{font-size:15px;}
+  .tl-item.condensed .tl-desc{margin-top:2px; font-size:13px;}
+
+  /* SKILLS */
+  .skill-group{margin-bottom:22px;}
+  .skill-group:last-child{margin-bottom:0;}
+  .skill-cat{
+    font-family:var(--font-mono); font-size:12px; font-weight:600;
+    color:var(--teal); text-transform:uppercase; letter-spacing:0.4px;
+    margin-bottom:10px;
+  }
+  .skill-cat::before{content:"▸ "; }
+  .chip-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    font-family:var(--font-mono); font-size:12.5px;
+    border:1px solid var(--border); border-radius:6px;
+    padding:6px 11px; background:var(--card); color:#33363c;
+  }
+  .chip.solid{background:var(--hero-bg); color:#fff; border-color:var(--hero-bg);}
+
+  .skills-cols{display:grid; grid-template-columns:1fr 1fr; gap:0 40px;}
+
+  /* PROJETO */
+  .project-card{
+    background:var(--hero-bg); color:#fff; border-radius:10px;
+    padding:28px 30px;
+  }
+  .project-eyebrow{font-family:var(--font-mono); font-size:12px; color:var(--teal-lt); text-transform:uppercase; letter-spacing:0.4px;}
+  .project-title{font-size:22px; font-weight:700; margin-top:10px;}
+  .project-desc{color:#c3c9d3; font-size:14.5px; margin-top:12px; max-width:60ch;}
+  .project-tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
+  .project-tags span{font-family:var(--font-mono); font-size:11.5px; color:var(--teal-lt); border:1px solid var(--hero-border); border-radius:5px; padding:4px 9px;}
+
+  /* FORMACAO */
+  .edu-item{display:flex; justify-content:space-between; gap:14px; padding:11px 0; border-bottom:1px solid var(--border); flex-wrap:wrap;}
+  .edu-item:last-child{border-bottom:none;}
+  .edu-title{font-size:15px; font-weight:600;}
+  .edu-inst{color:var(--muted); font-size:13px; margin-top:2px;}
+  .edu-period{font-family:var(--font-mono); color:var(--orange); font-size:12.5px; white-space:nowrap;}
+
+  /* CONTATO */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .contact-item .k{font-family:var(--font-mono); font-size:11.5px; color:var(--muted); text-transform:uppercase; letter-spacing:0.3px; display:block; margin-bottom:3px;}
+  .contact-item a, .contact-item span.v{font-size:15px; color:var(--ink);}
+  .contact-item a{color:var(--ink);}
+  .contact-item a:hover{color:var(--teal);}
+
+  footer{background:var(--hero-bg); color:var(--muted-lt); font-family:var(--font-mono); font-size:12.5px; text-align:center; padding:22px 16px;}
+  footer .dot{color:var(--teal-lt);}
+
+  @media (max-width:680px){
+    .hero{padding:44px 0 32px;}
+    .hero-name{font-size:32px;}
+    .hero-top{flex-direction:column-reverse;}
+    .stat-grid{grid-template-columns:repeat(2,1fr);}
+    .skills-cols{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .sec-title{font-size:19px;}
+    main{padding:40px 0 28px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div style="flex:1; min-width:240px;">
+        <div class="hero-name">SILVIO CÉSAR<br><span class="accent">STECCA</span></div>
+        <div class="hero-role">ESPECIALISTA ADVPL/TLPP &middot; PROTHEUS EXPERT &middot; TECH LEAD</div>
+        <p class="hero-desc">Trinta anos de TI condensados em uma única trajetória: comecei em redes e infraestrutura, passei por <b>Clipper, FoxPro e Delphi</b>, e há mais de uma década vivo dentro do ecossistema <b>TOTVS Protheus</b> — hoje liderando arquitetura, integrações e boas práticas de time.</p>
+        <div class="pill-row">
+          <span class="pill"><span class="k">@</span> rsstecca@gmail.com</span>
+          <span class="pill"><span class="k">in</span> /silvio-cesar-stecca</span>
+          <span class="pill"><span class="k">gh</span> /rsstecca</span>
+          <span class="pill"><span class="k">loc</span> Belo Horizonte, MG &middot; remoto</span>
+        </div>
+      </div>
+      <div class="avatar">SCS</div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat"><div class="n" style="color:var(--teal-lt);">30</div><div class="l">anos em TI</div></div>
+      <div class="stat"><div class="n" style="color:var(--orange);">12+</div><div class="l">anos ERP TOTVS</div></div>
+      <div class="stat"><div class="n" style="color:var(--teal-lt);">12</div><div class="l">vínculos</div></div>
+      <div class="stat"><div class="n" style="color:var(--orange);">Analista→Lead</div><div class="l">trajetória</div></div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section id="perfil">
+    <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">Perfil</span><span class="sec-rule"></span></div>
+    <p>Atuo com desenvolvimento em ADVPL há mais de 12 anos, com foco total no ERP TOTVS Protheus (v11 e v12), entregando soluções técnicas sob medida — tanto em projetos internos quanto em integrações com plataformas externas. Hoje, como <span class="hl">Tech Lead</span> na VMI Security, também respondo pela arquitetura, pelos padrões de código e pela evolução técnica do time.</p>
+    <p>Especialista em pontos de entrada, cadastros, relatórios gerenciais, workflows, Jobs e WebServices REST/SOAP; integrações com APIs externas, portais e sistemas legados; interfaces modernas com <span class="hl">Po-UI</span> e Angular; e customizações nos principais módulos fiscais e financeiros do Protheus.</p>
+    <p>Grande experiência com rotinas fiscais — <span class="hl">NF-e, SPED, EDI, CNAB, SINTEGRA</span> e Reforma Tributária (CBS/IBS) — além de conhecimento avançado em SQL Server, Oracle e MySQL. Gosto de entender o problema do cliente, propor soluções viáveis e entregar com clareza técnica.</p>
+  </section>
+
+  <section id="competencias">
+    <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">Competências técnicas</span><span class="sec-rule"></span></div>
+    <div class="skills-cols">
+      <div>
+        <div class="skill-group">
+          <div class="skill-cat">ERP TOTVS Protheus</div>
+          <div class="chip-row">
+            <span class="chip solid">ADVPL</span><span class="chip solid">TLPP</span>
+            <span class="chip">MVC</span><span class="chip">Pontos de Entrada</span>
+            <span class="chip">WebServices REST/SOAP</span><span class="chip">MSExecAuto</span>
+            <span class="chip">Embedded SQL</span><span class="chip">CNAB 240/400</span><span class="chip">ProBat</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-cat">Banco de dados / DBA</div>
+          <div class="chip-row">
+            <span class="chip solid">SQL Server</span>
+            <span class="chip">Oracle SQL</span><span class="chip">MySQL</span>
+            <span class="chip">Tuning de consultas</span><span class="chip">Stored Procedures</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-cat">Módulos funcionais</div>
+          <div class="chip-row">
+            <span class="chip solid">SIGAFIN</span>
+            <span class="chip">SIGAFAT</span><span class="chip">SIGAGPE</span><span class="chip">SIGACOM</span>
+            <span class="chip">SIGALOJA</span><span class="chip">SIGACFG</span><span class="chip">SIGATMS</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="skill-group">
+          <div class="skill-cat">Desenvolvimento web</div>
+          <div class="chip-row">
+            <span class="chip solid">Po-UI</span>
+            <span class="chip">Angular</span><span class="chip">REST APIs</span><span class="chip">JSON</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-cat">Fiscal</div>
+          <div class="chip-row">
+            <span class="chip solid">NF-e</span>
+            <span class="chip">NFS-e</span><span class="chip">SPED Fiscal</span><span class="chip">SPED Contribuições</span>
+            <span class="chip">EDI</span><span class="chip">SINTEGRA</span><span class="chip">eSocial</span><span class="chip">Reforma Tributária</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-cat">Ferramentas &amp; práticas</div>
+          <div class="chip-row">
+            <span class="chip solid">Git</span>
+            <span class="chip">GitLab</span><span class="chip">Azure DevOps</span><span class="chip">VS Code</span>
+            <span class="chip">Developer Studio</span><span class="chip">Postman</span><span class="chip">Code Review</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projeto">
+    <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">Projeto em destaque</span><span class="sec-rule"></span></div>
+    <div class="project-card">
+      <div class="project-eyebrow">Prova de conceito &middot; IA aplicada ao Protheus</div>
+      <div class="project-title">FINTCLAUDE.TLPP</div>
+      <p class="project-desc">Prova de conceito integrando a API da Claude/Anthropic ao Protheus para geração de relatórios financeiros em linguagem natural — com gráficos SVG renderizados diretamente em HTML. Envolveu resolver incompatibilidades reais do TLPP (TRY/CATCH substituído por BEGIN SEQUENCE/RECOVER, ajustes de estrutura WSRESTFUL/WSMETHOD) para viabilizar a integração.</p>
+      <div class="project-tags"><span>TLPP</span><span>Claude API</span><span>WSRESTFUL</span><span>SVG</span><span>Relatórios em linguagem natural</span></div>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">Experiência profissional</span><span class="sec-rule"></span></div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-row"><div class="tl-role">Tech Lead &middot; <span class="co">VMI Security</span></div><div class="tl-meta">jun/2026 – atual &middot; remoto</div></div>
+        <p class="tl-desc">Liderança técnica da equipe de desenvolvimento, definição de arquitetura e boas práticas.</p>
+        <ul class="tl-bullets">
+          <li>Revisão de código, apoio ao time e condução de projetos estratégicos.</li>
+          <li>Responsável pela qualidade e evolução técnica das soluções entregues.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-row"><div class="tl-role">Especialista em desenvolvimento &middot; <span class="co">VMI Security</span></div><div class="tl-meta">fev/2026 – jun/2026 &middot; Lagoa Santa/MG</div></div>
+        <ul class="tl-bullets">
+          <li>ADVPL (Microsiga), análise essencial e estruturada, Po-UI.</li>
+          <li>Desenvolvimento e sustentação de rotinas no ecossistema Protheus.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-row"><div class="tl-role">Especialista de sistemas Pleno &middot; <span class="co">Brasil PCH S.A.</span></div><div class="tl-meta">nov/2025 – fev/2026 &middot; Belo Horizonte</div></div>
+        <ul class="tl-bullets">
+          <li>Soluções completas para o ecossistema Protheus, combinando <b>ADVPL/TL++</b> e Po-UI.</li>
+          <li>Interfaces modernas, processos automatizados e integrações inteligentes, com foco em eficiência operacional.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-row"><div class="tl-role">Analista de desenvolvimento sênior &middot; <span class="co">Santa Cruz Acabamentos</span></div><div class="tl-meta">jul/2022 – nov/2025 &middot; Belo Horizonte</div></div>
+        <ul class="tl-bullets">
+          <li>Customizações avançadas em ADVPL para Protheus 12: pontos de entrada, cadastros, relatórios e integrações REST/WebServices.</li>
+          <li>Rotinas fiscais: <b>NFe, SPED Fiscal e Contribuições, EDI, CNAB e Sintegra</b>.</li>
+          <li>Telas em Po-UI seguindo o padrão visual TOTVS; sustentação de SIGAFIN, SIGAFAT, SIGAGPE, SIGACOM e SIGALOJA.</li>
+          <li>Migração de versão v11 → v12, atualização de pacotes, dicionários e patches.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-row"><div class="tl-role">Analista de desenvolvimento de software &middot; <span class="co">TOTVS</span></div><div class="tl-meta">out/2018 – jul/2022 &middot; Belo Horizonte</div></div>
+        <ul class="tl-bullets">
+          <li>Atuação dedicada ao <b>SIGAGPE</b> (folha, encargos, admissões, férias, rescisões e afastamentos).</li>
+          <li>Suporte a SIGAPON (ponto), SIGATRM (treinamentos) e eSocial completo.</li>
+          <li>Geração de RAIS, DIRF, SEFIP, CAGED e eventos XML do eSocial.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item condensed">
+        <div class="tl-row"><div class="tl-role">Desenvolvedor de software &middot; <span class="co">Solutii Sistemas</span></div><div class="tl-meta">dez/2017 – set/2018</div></div>
+        <p class="tl-desc">Customizações de relatórios e automações voltadas ao Protheus; apoio técnico direto ao cliente.</p>
+      </div>
+
+      <div class="tl-item condensed">
+        <div class="tl-row"><div class="tl-role">Analista de Negócios / Dev. ADVPL &middot; <span class="co">TOTVS</span></div><div class="tl-meta">ago/2013 – dez/2017</div></div>
+        <p class="tl-desc">Módulos SIGAFIN, SIGACOM, SIGAATF, SIGAGPE, SIGACFG, SIGATMS e SIGAFAT; SQL Server, Oracle e MySQL.</p>
+      </div>
+
+      <div class="tl-item condensed">
+        <div class="tl-row"><div class="tl-role">Programador Sênior &middot; <span class="co">Versa Informática</span></div><div class="tl-meta">fev/2011 – set/2013</div></div>
+        <p class="tl-desc">ERP próprio em FoxPro 9 com MySQL/SQL; módulo fiscal SPED Fiscal e Pis-Cofins.</p>
+      </div>
+
+      <div class="tl-item condensed">
+        <div class="tl-row"><div class="tl-role">Programador pleno &middot; <span class="co">Byte Software</span></div><div class="tl-meta">mar/2000 – mai/2010</div></div>
+        <p class="tl-desc">ERP, CRM e NF-e em Clipper, FiveWin, xHarbour, Delphi e VB; SINTEGRA, EDI, CNAB 240/400.</p>
+      </div>
+
+      <div class="tl-item condensed">
+        <div class="tl-row"><div class="tl-role">Técnico em processamento de dados &middot; <span class="co">Componente Infocenter</span></div><div class="tl-meta">set/1999 – fev/2000</div></div>
+        <p class="tl-desc">Servidores e estações Windows/Linux (SUSE, Conectiva, Red Hat); site da empresa em PHP.</p>
+      </div>
+
+      <div class="tl-item condensed">
+        <div class="tl-row"><div class="tl-role">Técnico de suporte &middot; <span class="co">Codeme Engenharia S.A.</span></div><div class="tl-meta">ago/1998 – set/1999</div></div>
+        <p class="tl-desc">Suporte a usuários, rede local e microinformática em Betim/MG.</p>
+      </div>
+
+      <div class="tl-item condensed">
+        <div class="tl-row"><div class="tl-role">Estagiário &middot; <span class="co">Banco do Brasil</span></div><div class="tl-meta">set/1996 – jun/1998</div></div>
+        <p class="tl-desc">Primeiro contato profissional com infraestrutura de TI: manutenção de micros e rede local.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="formacao">
+    <div class="sec-head"><span class="sec-num">05</span><span class="sec-title">Formação e idiomas</span><span class="sec-rule"></span></div>
+
+    <div class="edu-item">
+      <div><div class="edu-title">Pós-graduação · Engenharia de Dados</div><div class="edu-inst">Anhanguera Educacional</div></div>
+      <div class="edu-period">05/2026 – 02/2027</div>
+    </div>
+    <div class="edu-item">
+      <div><div class="edu-title">Pós-graduação · Desenvolvimento Web Full Stack</div><div class="edu-inst">Anhanguera Educacional</div></div>
+      <div class="edu-period">07/2025 – presente</div>
+    </div>
+    <div class="edu-item">
+      <div><div class="edu-title">Bacharelado · Análise e Desenvolvimento de Sistemas</div><div class="edu-inst">Anhanguera Educacional</div></div>
+      <div class="edu-period">02/2022 – 06/2025</div>
+    </div>
+    <div class="edu-item">
+      <div><div class="edu-title">Técnico em Processamento de Dados</div><div class="edu-inst">Colégio Brasileiro</div></div>
+      <div class="edu-period">1995 – 1998</div>
+    </div>
+    <div class="edu-item">
+      <div><div class="edu-title">Inglês</div><div class="edu-inst">CNA Idiomas</div></div>
+      <div class="edu-period">desde janeiro</div>
+    </div>
+    <div class="edu-item">
+      <div><div class="edu-title">Espanhol</div><div class="edu-inst">CNA Idiomas</div></div>
+      <div class="edu-period">a partir de 08/2026</div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="sec-head"><span class="sec-num">06</span><span class="sec-title">Contato</span><span class="sec-rule"></span></div>
+    <div class="contact-grid">
+      <div class="contact-item"><span class="k">E-mail</span><a href="mailto:rsstecca@gmail.com">rsstecca@gmail.com</a></div>
+      <div class="contact-item"><span class="k">Telefone</span><a href="tel:+5531995495515">(31) 99549-5515</a></div>
+      <div class="contact-item"><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/silvio-c%C3%A9sar-stecca-devprotheus/" target="_blank" rel="noopener">in/silvio-cesar-stecca</a></div>
+      <div class="contact-item"><span class="k">GitHub</span><a href="https://github.com/rsstecca" target="_blank" rel="noopener">github.com/rsstecca</a></div>
+      <div class="contact-item"><span class="k">Local</span><span class="v">Belo Horizonte / Lagoa Santa, MG</span></div>
+      <div class="contact-item"><span class="k">Idiomas</span><span class="v">Português (nativo) &middot; Inglês e Espanhol (CNA Idiomas)</span></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>$ Silvio César Stecca <span class="dot">&middot;</span> Especialista ADVPL &amp; Tech Lead <span class="dot">&middot;</span> disponível para novas oportunidades</footer>
+
+</body>
+</html>
